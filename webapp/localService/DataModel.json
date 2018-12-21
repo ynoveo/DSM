@@ -1,0 +1,21 @@
+{
+	"datamodel" : [
+		{
+		"datasetID" : "Plan de compte",
+		"srcSys" : "FP1CLNT510",
+		"tabSrc" : "SKA1",
+		"tabCible" : "/YNV/ZSKA1",
+		"tabDesc" : "Données générales du compte"
+		},
+
+{
+		"datasetID" : "Plan de compte",
+		"srcSys" : "FP1CLNT510",
+		"tabSrc" : "SKB1",
+		"tabCible" : "/YNV/ZSKB1",
+		"tabDesc" : "Données société du compte"
+		}		
+		
+		]
+	
+}
