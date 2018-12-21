@@ -1,0 +1,22 @@
+{
+	"dataset" : {
+		"idDataset" : "1",
+		"description" : "Référentiel compte",
+		"statut" : "Validé"
+	},
+	"systemsAffectes" : [{
+			"idSystem" : "FP1CLNT510"
+		}, {
+			"idSystem" : "FP2CLNT520"
+		}, {
+			"idSystem" : "FP4CLNT540"
+		}
+	],
+	"systemsNonAffectes" : [{
+			"idSystem" : "FP3CLNT520",
+			"affecte" : "X"
+		}, {
+			"idSystem" : "FP5CLNT560",
+			"affecte" : "X"
+		}]
+}

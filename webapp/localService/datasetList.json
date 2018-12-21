@@ -1,0 +1,16 @@
+{
+	"dataset" : [{
+			"idDataset" : "1",
+			"description" : "Référentiel compte",
+			"statut" : "Validé"
+		}, {
+			"idDataset" : "2",
+			"description" : "Référentiel client",
+			"statut" : "A Valider"
+		}, {
+			"idDataset" : "3",
+			"description" : "Référentiel fournisseur",
+			"statut" : "Inactif"
+		}
+	]
+}
