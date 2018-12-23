@@ -1,9 +1,10 @@
-<mvc:View controllerName="YNV.DSM.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="YNV.DSM.controller.View1" displayBlock="true">
 	<App id="idAppControl">
 		<pages>
-			<Page title="{i18n>title}">
-				<content></content>
+			<Page title="{i18n&gt;title}">
+				<content>
+				    <Button xmlns="sap.m" text="test dataset list" id="button0" press="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'admin_ds_list'\}\}\}"/>
+				</content>
 			</Page>
 		</pages>
 	</App>
