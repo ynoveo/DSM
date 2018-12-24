@@ -1,6 +1,8 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/core/routing/History",
+	"sap/ui/model/json/JSONModel"	
+], function (Controller, History, JSONModel) {
 	"use strict";
 
 	return Controller.extend("YNV.DSM.controller.admin_ds_list", {
@@ -10,9 +12,16 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf YNV.DSM.view.admin_ds_list
 		 */
-		//	onInit: function() {
-		//
-		//	},
+			onInit: function() {
+				var oModelDS = new JSONModel();
+				// A remplacer par appel par une fonction avec ckeck des habilitations admin + dataset + contrôle de la langue
+//				if(sap.ui.getCore().getModel("global").getProperty("/mode") === "test") {
+				oModelDS.loadData("../webapp/localService/datasetList.json", {}, false);
+//				} else {
+//					oModelClGroupe.loadData(sUrl,{},false);				
+//				}
+				this.getView().setModel(oModelDS);
+			},
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
