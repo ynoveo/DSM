@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/routing/History",
-	"sap/ui/model/json/JSONModel"	
-], function (Controller, History, JSONModel) {
+	"sap/ui/model/json/JSONModel",	
+	"sap/m/MessageToast"
+], function (Controller, History, JSONModel, MessageToast) {
 	"use strict";
 
 	return Controller.extend("YNV.DSM.controller.admin_ds_list", {
@@ -22,7 +23,20 @@ sap.ui.define([
 //				}
 				this.getView().setModel(oModelDS);
 			},
-
+			onRowSelectionChange: function(oEvent) {
+		//		var oRowContext = oEvent.getParameter("rowContext");
+		//		var oContextObject = oRowContext.getObject();
+				var DS_list = this.byId("Dataset_list");
+		//		console.log(oContextObject);
+		//		MessageToast.show("Dataset " + oContextObject.idDataset + " selectionné");
+				if(DS_list.getProperty("selectedIndex") >= 0 ){
+					this.byId("editButton").setProperty("enabled",true);
+					this.byId("del_button").setProperty("enabled",true);					
+				} else {
+					this.byId("editButton").setProperty("enabled",false);
+					this.byId("del_button").setProperty("enabled",false);					
+				}
+			}
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).

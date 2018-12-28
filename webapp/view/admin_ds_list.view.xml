@@ -18,6 +18,8 @@
 				selectionMode="Single"
 				selectionBehavior = "RowOnly"
 				visibleRowCount="7"
+				rowSelectionChange="onRowSelectionChange"
+				id="Dataset_list"
 				>
 				<columns>
 					<Column width="4rem">
@@ -50,14 +52,19 @@
 				<m:Button
 					icon="sap-icon://edit"
 					tooltip="{i18n>ModifyDataSet}"
-					press="newDS"/>				
+					press="editnewDS"
+					enabled="false"
+					id="editButton"
+					/>				
 				<m:ToolbarSpacer/>
 				<m:ToolbarSpacer/>
 				<m:Button
 					type = "Reject"
 					icon="sap-icon://delete"
 					tooltip="{i18n>deleteDataSet}"
-					press="DeleteDS"/>				
+					press="DeleteDS"
+					id="del_button" 
+					enabled= "false" />				
 				
 				
 			</m:Toolbar>
