@@ -91,6 +91,14 @@
 						"admin_ds_list"
 					]
 				}
+				,
+				{
+					"name": "admin_ds",
+					"pattern": "admin_ds",
+					"target": [
+						"admin_ds"
+					]
+				}
 			],
 			"targets": {
 				"TargetView1": {
@@ -102,6 +110,11 @@
 				"admin_ds_list": {
 					"viewType": "XML",
 					"viewName": "admin_ds_list"
+				}
+				,
+				"admin_ds": {
+					"viewType": "XML",
+					"viewName": "admin_ds"
 				}
 			}
 		}
