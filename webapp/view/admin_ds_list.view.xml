@@ -12,66 +12,69 @@
 		enableScrolling="false"
 		class="sapUiContentPadding">
 		<m:content>
-			<Table
-				rows="{/dataset}"
-				title="{i18n>DataSetList}"
-				selectionMode="Single"
-				selectionBehavior = "RowOnly"
-				visibleRowCount="7"
-				rowSelectionChange="onRowSelectionChange"
-				id="Dataset_list"
-				>
-				<columns>
-					<Column width="4rem">
-						<m:Label text="{i18n>DataSetID}" />
-						<template>
-							<m:Text text="{idDataset}" wrapping="false" />
-						</template>
-					</Column>
-					<Column width="18rem">
-						<m:Label text="{i18n>DataSetDesc}" />
-						<template>
-							<m:Text text="{description}"/>
-						</template>
-					</Column>
-					<Column width="7rem" hAlign="End">
-						<m:Label text="{i18n>DataSetStatus}" />
-						<template>
-							<m:Label text="{statut}" />
-						</template>
-					</Column>
-		</columns>
-		<footer>
-			<m:Toolbar>
-				<m:ToolbarSpacer/>
-				<m:Button
-					type = "Accept"
-					icon="sap-icon://add"
-					tooltip="{i18n>addDataSet}"
-					press="newDS"/>
-				<m:Button
-					icon="sap-icon://edit"
-					tooltip="{i18n>ModifyDataSet}"
-					press="editnewDS"
-					enabled="false"
-					id="editButton"
-					/>				
-				<m:ToolbarSpacer/>
-				<m:ToolbarSpacer/>
-				<m:Button
-					type = "Reject"
-					icon="sap-icon://delete"
-					tooltip="{i18n>deleteDataSet}"
-					press="DeleteDS"
-					id="del_button" 
-					enabled= "false" />				
+
+				<Table
+					rows="{/dataset}"
+					title="{i18n>DataSetList}"
+					selectionMode="Single"
+					selectionBehavior = "RowOnly"
+					visibleRowCount="7"
+					rowSelectionChange="onRowSelectionChange"
+					id="Dataset_list"
+					>
+					<columns>
+						<Column width="4rem">
+							<m:Label text="{i18n>DataSetID}" />
+							<template>
+								<m:Text text="{idDataset}" wrapping="false" />
+							</template>
+						</Column>
+						<Column width="18rem">
+							<m:Label text="{i18n>DataSetDesc}" />
+							<template>
+								<m:Text text="{description}"/>
+							</template>
+						</Column>
+						<Column width="7rem" hAlign="End">
+							<m:Label text="{i18n>DataSetStatus}" />
+							<template>
+								<m:Label text="{statut}" />
+							</template>
+						</Column>
+			</columns>
+			<footer>
+				<m:Toolbar>
+					<m:ToolbarSpacer/>
+					<m:Button
+						type = "Accept"
+						icon="sap-icon://add"
+						tooltip="{i18n>addDataSet}"
+						press="newDS"/>
+					<m:Button
+						icon="sap-icon://edit"
+						tooltip="{i18n>ModifyDataSet}"
+						press="editnewDS"
+						enabled="false"
+						id="editButton"
+						/>				
+					<m:ToolbarSpacer/>
+					<m:ToolbarSpacer/>
+					<m:Button
+						type = "Reject"
+						icon="sap-icon://delete"
+						tooltip="{i18n>deleteDataSet}"
+						press="DeleteDS"
+						id="del_button" 
+						enabled= "false" />				
+					
+					
+				</m:Toolbar>
 				
-				
-			</m:Toolbar>
+			</footer>
 			
-		</footer>
+				</Table>
 		
-			</Table>
+		
 		</m:content>
 	</m:Page>
 </mvc:View>

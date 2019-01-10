@@ -1,0 +1,22 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="YNV.DSM.controller.dataset_filelds"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+			<Page title="{i18n>EditDataSet}">
+				<content>
+					<Wizard id="CreateProductWizard" complete="wizardCompletedHandler">
+						<WizardStep id="DSMsourceSystem" title="{i18n>SourceSystem}" validated="true">								
+							<Text text="Definition des systèmes sources"/>
+						</WizardStep>
+						<WizardStep id="DSMdefineTable" title="{i18n>DefineTable}" validated="true">								
+							<Text text="Definition des tables du DataSet"/>
+						</WizardStep>					
+						<WizardStep id="DSMdefineJoin" title="{i18n>DefineJoins}" validated="true">								
+							<Text text="Definition des jointures"/>
+						</WizardStep>						
+						<WizardStep id="DSMdefineFields" title="{i18n>DefineFields}" validated="true">								
+							<Text text="Definition des zones du DataSet"/>
+						</WizardStep>						
+					</Wizard>	
+				</content>
+			</Page>
+</mvc:View>

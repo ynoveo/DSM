@@ -29,10 +29,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -60,11 +57,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -76,22 +71,21 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "TargetView1",
-					"pattern": "RouteView1",
-					"target": [
-						"TargetView1"
-					]
-				},
-				{
-					"name": "admin_ds_list",
-					"pattern": "admin_ds_list",
-					"target": [
-						"admin_ds_list"
-					]
-				}
-			],
+			"routes": [{
+				"name": "TargetView1",
+				"pattern": "RouteView1",
+				"target": ["TargetView1"]
+			}, {
+				"name": "admin_ds_list",
+				"pattern": "admin_ds_list",
+				"target": ["admin_ds_list"]
+			}, {
+				"name": "dataset_filelds",
+				"pattern": "dataset_filelds",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["dataset_filelds"]
+			}],
 			"targets": {
 				"TargetView1": {
 					"viewType": "XML",
@@ -102,6 +96,10 @@
 				"admin_ds_list": {
 					"viewType": "XML",
 					"viewName": "admin_ds_list"
+				},
+				"dataset_filelds": {
+					"viewType": "XML",
+					"viewName": "dataset_filelds"
 				}
 			}
 		}
