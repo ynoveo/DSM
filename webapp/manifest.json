@@ -71,6 +71,7 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
+
 			"routes": [{
 				"name": "TargetView1",
 				"pattern": "RouteView1",
@@ -86,6 +87,9 @@
 				"greedy": false,
 				"target": ["dataset_filelds"]
 			}],
+
+
+
 			"targets": {
 				"TargetView1": {
 					"viewType": "XML",
@@ -100,6 +104,11 @@
 				"dataset_filelds": {
 					"viewType": "XML",
 					"viewName": "dataset_filelds"
+				}
+				,
+				"admin_ds": {
+					"viewType": "XML",
+					"viewName": "admin_ds"
 				}
 			}
 		}
