@@ -1,0 +1,8 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+	
+	<Text text="Definition des systèmes sources"/>
+	<Button icon="sap-icon://iphone" text="test controller" press="onTestPress"/>
+</core:FragmentDefinition>	
+	

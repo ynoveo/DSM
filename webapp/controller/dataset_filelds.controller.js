@@ -1,6 +1,8 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast",
+	"sap/ui/core/UIComponent"
+], function (Controller, MessageToast, UIC) {
 	"use strict";
 
 	return Controller.extend("YNV.DSM.controller.dataset_filelds", {
@@ -39,7 +41,10 @@ sap.ui.define([
 		//	onExit: function() {
 		//
 		//	}
-
+		onTestPress: function(oevent){
+			var t = "Controleur principal";
+			MessageToast.show(t);
+		}
 	});
 
 });
