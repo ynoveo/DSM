@@ -1,0 +1,8 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+	
+	<Text text="Definition des tables du DataSet"/>
+
+</core:FragmentDefinition>	
+	

@@ -5,16 +5,17 @@
 				<content>
 					<Wizard id="CreateProductWizard" complete="wizardCompletedHandler">
 						<WizardStep id="DSMsourceSystem" title="{i18n>SourceSystem}" validated="true">								
-							<Text text="Definition des systèmes sources"/>
+							<core:Fragment fragmentName="YNV.DSM.view.DS_M_WIZ.DS_M_SrcSyst" type="XML" />
 						</WizardStep>
 						<WizardStep id="DSMdefineTable" title="{i18n>DefineTable}" validated="true">								
-							<Text text="Definition des tables du DataSet"/>
+							<core:Fragment fragmentName="YNV.DSM.view.DS_M_WIZ.DS_M_Tables" type="XML" />							
 						</WizardStep>					
 						<WizardStep id="DSMdefineJoin" title="{i18n>DefineJoins}" validated="true">								
-							<Text text="Definition des jointures"/>
+							<core:Fragment fragmentName="YNV.DSM.view.DS_M_WIZ.DS_M_Joins" type="XML" />						
 						</WizardStep>						
 						<WizardStep id="DSMdefineFields" title="{i18n>DefineFields}" validated="true">								
-							<Text text="Definition des zones du DataSet"/>
+							<core:Fragment fragmentName="YNV.DSM.view.DS_M_WIZ.DS_M_Fields" type="XML" />
+							
 						</WizardStep>						
 					</Wizard>	
 				</content>
