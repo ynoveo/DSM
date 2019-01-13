@@ -4,19 +4,21 @@
 		"description" : "Référentiel compte",
 		"statut" : "Validé"
 	},
-	"systemsAffectes" : [{
-			"idSystem" : "FP1CLNT510"
-		}, {
-			"idSystem" : "FP2CLNT520"
-		}, {
-			"idSystem" : "FP4CLNT540"
-		}
-	],
-	"systemsNonAffectes" : [{
+	"systems" : [{
+			"idSystem" : "FP1CLNT510",
+			"Selected" : "X"
+		},{
+			"idSystem" : "FP2CLNT520",
+			"Selected" : ""
+		},{
 			"idSystem" : "FP3CLNT520",
-			"affecte" : "X"
+			"Selected" : "X"
+		}, {
+			"idSystem" : "FP4CLNT540",
+			"Selected" : ""
 		}, {
 			"idSystem" : "FP5CLNT560",
-			"affecte" : "X"
-		}]
+			"Selected" : "X"
+		}
+	]
 }

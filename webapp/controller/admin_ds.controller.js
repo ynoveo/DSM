@@ -29,10 +29,43 @@ sap.ui.define([
 			this._setEmptyValue("/productPrice");
 			var oModelClGroupe = new JSONModel();
 			oModelClGroupe.loadData("../webapp/localService/testglou.json", {}, false);
-			this.getView().setModel(oModelClGroupe, "remoteClgroupe");
+			var oModelSyst = new JSONModel();
+			oModelSyst.loadData("../webapp/localService/systemList.json", {}, false);
+			this.getView().setModel(oModelSyst, "Systemes");
 		},
-		moveToSelectedProductsTable: function() {
-			
+		getSelectedRowContext: function(sTableId, fnCallback) {
+			var oTable = this.byId(sTableId);
+			var iSelectedIndex = oTable.getSelectedIndex();
+
+			if (iSelectedIndex === -1) {
+				MessageToast.show("Please select a row!");
+				return;
+			}
+
+			var oSelectedContext = oTable.getContextByIndex(iSelectedIndex);
+			if (oSelectedContext && fnCallback) {
+				fnCallback.call(this, oSelectedContext, iSelectedIndex, oTable);
+			}
+
+			return oSelectedContext;
+		},
+		moveToSelectedSystems: function() {
+			this.getSelectedRowContext("SystDispo", function(oSelectedRowContext) {
+				var oTable2 = this.byId("SystSelection");
+				var oFirstRowContext = oTable2.getContextByIndex(0);
+
+				// insert always as a first row
+				var iNewRank = this.config.defaultRank;
+				if (oFirstRowContext) {
+					iNewRank =  this.config.rankAlgorithm.Before(oFirstRowContext.getProperty("Selected"));
+				}
+
+				this.oProductsModel.setProperty("Selected", iNewRank, oSelectedRowContext);
+				this.oProductsModel.refresh(true);
+
+				// select the inserted row
+				oTable2.setSelectedIndex(0);
+			});
 		},
 		setProductType: function (evt) {
 			var productType = evt.getSource().getTitle();
