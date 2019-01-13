@@ -17,23 +17,27 @@
 							<WizardStep id="SystemList"
 										title="Systèmes Sources"
 										validated="true">
-								<MessageStrip class="sapUiSmallMarginBottom"
-										text="The Wizard control is supposed to break down large tasks, into smaller steps, easier for the user to work with."
-										showIcon="true"/>
-								<Text class="sapUiSmallMarginBottom"
-										text="Sed fermentum, mi et tristique ullamcorper, sapien sapien faucibus sem, quis pretium nibh lorem malesuada diam. Nulla quis arcu aliquet, feugiat massa semper, volutpat diam. Nam vitae ante posuere, molestie neque sit amet, dapibus velit. Maecenas eleifend tempor lorem. Mauris vitae elementum mi, sed eleifend ligula. Nulla tempor vulputate dolor, nec dignissim quam convallis ut. Praesent vitae commodo felis, ut iaculis felis. Fusce quis eleifend sapien, eget facilisis nibh. Suspendisse est velit, scelerisque ut commodo eget, dignissim quis metus. Cras faucibus consequat gravida. Curabitur vitae quam felis. Phasellus ac leo eleifend, commodo tortor et, varius quam. Aliquam erat volutpat"/>
-								<HBox
-										alignItems="Center"
-										justifyContent="Center"
-										width="100%">
-									<SegmentedButton
-											width="320px"
-											select="setProductTypeFromSegmented">
-										<Button icon="sap-icon://iphone" text="Mobile"/>
-										<Button icon="sap-icon://sys-monitor" text="Desktop"/>
-										<Button icon="sap-icon://database" text="Other"/>
-									</SegmentedButton>
-								</HBox>
+								<Table
+				        				id="matchTable"
+				        				items="{
+											path: 'remoteClgroupe>/match'
+										}"
+										noDataText="Aucun match"
+										headerText="Matchs à venir"
+				        				width="100%">
+										<columns>
+											<Column width="100%" hAlign="Left"/>
+										</columns>
+										<items>
+											<ColumnListItem selected="true" type="Active" press="openPopup">
+												<cells>
+													<ObjectIdentifier
+														id="scores"
+														text="{remoteClgroupe>txtequipeB}"/>
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
 							</WizardStep>
 							<WizardStep id="TablesList"
 										validated="false"

@@ -27,6 +27,9 @@ sap.ui.define([
 			this._setEmptyValue("/productManufacturer");
 			this._setEmptyValue("/productDescription");
 			this._setEmptyValue("/productPrice");
+			var oModelClGroupe = new JSONModel();
+			oModelClGroupe.loadData("../webapp/localService/testglou.json", {}, false);
+			this.getView().setModel(oModelClGroupe, "remoteClgroupe");
 		},
 		setProductType: function (evt) {
 			var productType = evt.getSource().getTitle();
