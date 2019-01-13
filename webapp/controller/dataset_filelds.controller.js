@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"sap/ui/core/UIComponent"
-], function (Controller, MessageToast, UIC) {
+	"sap/ui/core/UIComponent",
+	'sap/ui/model/json/JSONModel'
+], function (Controller, MessageToast, UIC,JSONModel) {
 	"use strict";
 
 	return Controller.extend("YNV.DSM.controller.dataset_filelds", {
@@ -13,9 +14,38 @@ sap.ui.define([
 		 * @memberOf YNV.DSM.view.dataset_filelds
 		 */
 		onInit: function () {
-
+			var oModelSyst = new JSONModel();
+			oModelSyst.loadData("../webapp/localService/systemList.json", {}, false);
+			this.getView().setModel(oModelSyst, "Systemes");
 		},
-
+		moveToSelectedSystems: function() {
+			var oAvailableSystemsTable = this.byId("SystDispo");
+			var aSelectedItems = oAvailableSystemsTable.getSelectedItems();
+			var oSelectedItem = aSelectedItems[0];
+			if (!oSelectedItem) {
+				MessageToast.show("Please select a row!");
+				return;
+			}else
+				{
+					var oContext = oSelectedItem.getBindingContext("Systemes");
+					var oModel = oAvailableSystemsTable.getModel("Systemes");
+					oModel.setProperty("Selected", "X", oContext);
+				}
+		},
+		moveToAvailableSystems: function() {
+			var oAvailableSystemsTable = this.byId("SystSelection");
+			var aSelectedItems = oAvailableSystemsTable.getSelectedItems();
+			var oSelectedItem = aSelectedItems[0];
+			if (!oSelectedItem) {
+				MessageToast.show("Please select a row!");
+				return;
+			}else
+				{
+					var oContext = oSelectedItem.getBindingContext("Systemes");
+					var oModel = oAvailableSystemsTable.getModel("Systemes");
+					oModel.setProperty("Selected", "", oContext);
+				}
+		},
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).

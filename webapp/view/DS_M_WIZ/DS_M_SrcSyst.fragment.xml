@@ -3,6 +3,72 @@
   xmlns:core="sap.ui.core">
 	
 	<Text text="Definition des systèmes sources"/>
-	<Button icon="sap-icon://iphone" text="test controller" press="onTestPress"/>
+	<HBox renderType="Bare">
+		<Table
+			mode="SingleSelectMaster"
+			id="SystDispo"
+			items="{
+				path: 'Systemes>/systems',
+				filters: {path: 'Selected', operator: 'EQ', value1: ''}
+			}"
+			noDataText="Aucun système"
+			headerText="Systèmes disponibles"
+			width="100%"
+			growing="true"
+			growingThreshold="5">
+			<columns>
+				<Column>
+					<Text text="Système" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="openPopup">
+					<cells>
+						<ObjectIdentifier
+							id="scores"
+							text="{Systemes>idSystem}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<VBox justifyContent="Center" class="sapUiTinyMarginBeginEnd">
+			<Button
+				class="sapUiTinyMarginBottom"
+				icon="sap-icon://navigation-right-arrow"
+				tooltip="Move to selected"
+				press="moveToSelectedSystems"/>
+			<Button
+				icon="sap-icon://navigation-left-arrow"
+				tooltip="Move to available"
+				press="moveToAvailableSystems"/>
+		</VBox>
+		<Table
+			mode="SingleSelectMaster"
+			id="SystSelection"
+			items="{
+				path: 'Systemes>/systems',
+				filters: {path: 'Selected', operator: 'EQ', value1: 'X'}
+			}"
+			noDataText="Aucun système"
+			headerText="Systèmes sélectionnés"
+			width="100%"
+			growing="true"
+			growingThreshold="5">
+			<columns>
+				<Column>
+					<Text text="Système" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="openPopup">
+					<cells>
+						<ObjectIdentifier
+							id="scores2"
+							text="{Systemes>idSystem}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</HBox>
 </core:FragmentDefinition>	
 	

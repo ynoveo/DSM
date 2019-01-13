@@ -37,7 +37,7 @@
 											</Column>
 										</columns>
 										<items>
-											<ColumnListItem selected="true" type="Active" press="openPopup">
+											<ColumnListItem type="Active" press="openPopup">
 												<cells>
 													<ObjectIdentifier
 														id="scores"
@@ -55,7 +55,7 @@
 										<Button
 											icon="sap-icon://navigation-left-arrow"
 											tooltip="Move to available"
-											press="moveToAvailableProductsTable"/>
+											press="moveToAvailableSystems"/>
 									</VBox>
 									<Table
 				        				mode="SingleSelectMaster"
@@ -75,7 +75,7 @@
 											</Column>
 										</columns>
 										<items>
-											<ColumnListItem selected="true" type="Active" press="openPopup">
+											<ColumnListItem type="Active" press="openPopup">
 												<cells>
 													<ObjectIdentifier
 														id="scores2"
