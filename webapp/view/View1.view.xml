@@ -6,6 +6,7 @@
 				    <Button xmlns="sap.m" text="test dataset list" id="button0" press="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'admin_ds_list'\}\}\}"/>
 				    <Button xmlns="sap.m" text="test dataset create" id="button1" press="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'dataset_filelds'\}\}\}"/>
 				    <Button xmlns="sap.m" text="test param dataset" id="button2" press="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'admin_ds'\}\}\}"/>
+				    <Button xmlns="sap.m" text="dis bonjour" id="button3" press="bonjour" />
 				</content>
 			</Page>
 		</pages>

@@ -1,9 +1,12 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
+sap.ui.define(["sap/ui/core/mvc/Controller","./Utils"], function (Controller,Utils) {
 	"use strict";
 	return Controller.extend("YNV.DSM.controller.View1", {
 		/**
 		 *@memberOf YNV.DSM.controller.View1
 		 */
+		bonjour:function (oEvent) {
+			Utils.onSalut();
+		},
 		action: function (oEvent) {
 			var that = this;
 			var actionParameters = JSON.parse(oEvent.getSource().data("wiring").replace(/'/g, "\""));

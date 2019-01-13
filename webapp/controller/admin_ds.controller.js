@@ -31,6 +31,9 @@ sap.ui.define([
 			oModelClGroupe.loadData("../webapp/localService/testglou.json", {}, false);
 			this.getView().setModel(oModelClGroupe, "remoteClgroupe");
 		},
+		moveToSelectedProductsTable: function() {
+			
+		},
 		setProductType: function (evt) {
 			var productType = evt.getSource().getTitle();
 			this.model.setProperty("/productType", productType);
