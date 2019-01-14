@@ -4,6 +4,9 @@
 			<Page title="{i18n>EditDataSet}">
 				<content>
 					<Wizard id="CreateProductWizard" complete="wizardCompletedHandler">
+						<WizardStep id="DSMdefinition" title="{i18n>EditDataSet}" validated="true">								
+							<core:Fragment fragmentName="YNV.DSM.view.DS_M_WIZ.DS_M_Definition" type="XML" />
+						</WizardStep>
 						<WizardStep id="DSMsourceSystem" title="{i18n>SourceSystem}" validated="true">								
 							<core:Fragment fragmentName="YNV.DSM.view.DS_M_WIZ.DS_M_SrcSyst" type="XML" />
 						</WizardStep>
