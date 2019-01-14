@@ -14,9 +14,16 @@ sap.ui.define([
 		 * @memberOf YNV.DSM.view.dataset_filelds
 		 */
 		onInit: function () {
+		// JSON pour les systèmes sources	
 			var oModelSyst = new JSONModel();
 			oModelSyst.loadData("../webapp/localService/systemList.json", {}, false);
 			this.getView().setModel(oModelSyst, "Systemes");
+			
+		//JSON pour les tables actives du modèle
+//	
+			var oModelTbl = new JSONModel();
+			oModelTbl.loadData("../webapp/localService/DataModel.json", {}, false); 
+			this.getView().setModel(oModelTbl, "DataTableModel");
 		},
 		moveToSelectedSystems: function() {
 			var oAvailableSystemsTable = this.byId("SystDispo");

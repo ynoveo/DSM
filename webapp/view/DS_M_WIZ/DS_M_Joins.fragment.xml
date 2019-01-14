@@ -1,8 +1,36 @@
-<core:FragmentDefinition
-  xmlns="sap.m"
-  xmlns:core="sap.ui.core">
-	
-	<Text text="Definition des tables du DataSet"/>
+<core:FragmentDefinition xmlns="sap.m" 
+						 xmlns:core="sap.ui.core" 	
+						 xmlns:l="sap.ui.layout"
+						 xmlns:f="sap.ui.layout.form"						 
+>
 
-</core:FragmentDefinition>	
+	<f:SimpleForm id="SimpleForm_DS_J" editable="true" 
+		title="Definition des jointures entre les tables du DataSet"
+		columnsM="2"
+		columnsL="3"
+		columnsXL="4"
+		>
+		<f:content>
+		<core:Title text="Table 1" />
+		<Select id="T1_J1" items="{path:'DataTableModel>/datamodel'}" >
+			<core:Item key="{DataTableModel>tabCible}" text="{DataTableModel>tabDesc}"/>
+		</Select>		
+		<core:Title text="Table 2" />		
+		<Select id="T2_J1">
+			<items>
+				<core:Item text="England" key="England"/>
+				<core:Item text="Germany" key="Germany"/>
+				<core:Item text="USA" key="USA"/>
+			</items>
+		</Select>		
+		</f:content>
+	</f:SimpleForm>	
+
 	
+	
+
+
+
+
+
+</core:FragmentDefinition>
