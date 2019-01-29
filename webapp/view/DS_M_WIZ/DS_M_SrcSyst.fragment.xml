@@ -1,6 +1,7 @@
 <core:FragmentDefinition
   xmlns="sap.m"
-  xmlns:core="sap.ui.core">
+  xmlns:core="sap.ui.core"
+  xmlns:t="sap.ui.table">
 	
 	<Text text="Definition des systèmes sources"/>
 	<HBox renderType="Bare">
@@ -70,5 +71,25 @@
 			</items>
 		</Table>
 	</HBox>
+	<t:Table id="table1"
+				rows="{Systemes>/systems}"
+				selectionMode="None"
+				visibleRowCount="5"
+				ariaLabelledBy="title">
+				<t:columns>
+					<t:Column width="9rem">
+						<Label text="Syst." />
+						<t:template>
+							<Button text="Tous" press="handleDetailsPress"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+				<t:Column width="11rem">
+					<Label text="Table" />
+					<t:template>
+						<Text text="{Systemes>idSystem}" wrapping="false" />
+					</t:template>
+				</t:Column>
+			</t:Table>
 </core:FragmentDefinition>	
 	
